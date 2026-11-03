@@ -4,11 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>Atualiza Talks 2027 | Curso de atualização em Medicina de Emergência</title>
-<meta name="description" content="Atualiza Talks 2027, da Emergency Talks: curso online de atualização continuada em Medicina de Emergência para médicos com título de especialista. Artigo comentado toda segunda-feira, com áudio e flashcards, e um encontro ao vivo por mês, aos sábados, das 9h às 12h." />
+<meta name="description" content="Atualiza Talks 2027, da Emergency Talks: curso online de atualização continuada em Medicina de Emergência para médicos com ou sem título de especialista: artigos, pesquisas, procedimentos e notícias da especialidade. Artigo comentado toda segunda-feira, com áudio e flashcards, e um encontro ao vivo por mês, aos sábados, das 9h às 12h." />
 <meta name="robots" content="noindex" />
 <meta name="theme-color" content="#05030A" />
 <meta property="og:title" content="Atualiza Talks 2027 · Emergency Talks" />
-<meta property="og:description" content="Curso online de atualização continuada em Medicina de Emergência para médicos com título de especialista. De janeiro a dezembro de 2027." />
+<meta property="og:description" content="Curso online de atualização continuada em Medicina de Emergência para médicos com ou sem título de especialista. De janeiro a dezembro de 2027." />
 <meta property="og:type" content="website" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23E8303F'/%3E%3Cstop offset='1' stop-color='%23B70412'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='url(%23g)'/%3E%3Cg transform='translate(32 32) scale(.74) translate(-32 -32)' fill='%23fff' stroke='%23fff' stroke-linejoin='round' stroke-linecap='round'%3E%3Cpath d='M48.85 17.86A22 22 0 1 1 35.82 10.33' fill='none' stroke-width='6.5'/%3E%3Cpath d='M43.2 11.6 33.7 16.9 36 3.5Z' stroke-width='1.5'/%3E%3Cpath d='M27 22.5v19L43 32Z' stroke-width='3.5'/%3E%3C/g%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -86,6 +86,8 @@ section{position:relative}
 .wm{display:flex;flex-direction:column;font-family:var(--font-display);line-height:.92;letter-spacing:-.02em;color:#fff;font-size:1.12rem}
 .wm span{font-weight:400}
 .wm b{font-weight:800}
+/* "me" = Medicina de Emergência; outras especialidades terão a própria sigla */
+.wm em{font-style:normal;font-weight:900;color:var(--red-hi)}
 
 /* ===== Intro ===== */
 .intro{position:fixed;inset:0;z-index:300;background:#000;display:flex;align-items:center;justify-content:center;gap:18px;animation:introAuto .45s ease 1.8s forwards;cursor:pointer}
@@ -188,6 +190,20 @@ section{position:relative}
 .checks{display:grid;gap:10px;margin:18px 0 22px}
 .checks li{display:flex;gap:10px;align-items:flex-start;color:#eceef2;font-weight:500}
 .checks .i{color:var(--red-text);width:20px;height:20px;margin-top:3px;stroke-width:2.6}
+.topics-k{margin-top:26px;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.topics{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:12px auto 0;max-width:720px}
+.topic{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-weight:600;font-size:.94rem;color:#eceef2}
+.topic .i{width:18px;height:18px;color:var(--red-text)}
+.who-sel{margin-top:clamp(30px,4vw,44px);font-weight:600;color:#d4d6dc}
+.who-sel+.profiles{margin-top:18px}
+/* balão do Preparatório TEME (perfil "ainda não tenho título") */
+.bubble{position:relative;display:flex;gap:14px;align-items:flex-start;margin-top:26px;padding:18px 20px;border-radius:14px;background:linear-gradient(135deg,rgba(211,28,43,.2),rgba(183,4,18,.08));border:1px solid rgba(232,48,63,.45)}
+.bubble::before{content:"";position:absolute;top:-8px;left:30px;width:14px;height:14px;background:#2a0b10;border-left:1px solid rgba(232,48,63,.45);border-top:1px solid rgba(232,48,63,.45);transform:rotate(45deg)}
+.bubble .ic{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff}
+.bubble .ic .i{width:20px;height:20px}
+.bubble strong{display:block;color:#fff;font-size:1.02rem;margin-bottom:4px}
+.bubble p{font-size:.95rem}
+.bubble .btn{margin-top:14px}
 
 /* ===== Números ===== */
 .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -426,6 +442,7 @@ section{position:relative}
 .cert .ch{display:flex;align-items:center;gap:8px}
 .cert .ch .mk{width:24px;height:24px;color:var(--red)}
 .cert .ch .wm{color:#1a1a1d;font-size:.78rem}
+.cert .ch .wm em{color:var(--red)}
 .cert h5{font-family:var(--font-display);font-weight:900;font-size:clamp(1.2rem,2.2vw,1.6rem);letter-spacing:.02em;margin-top:9%;color:#1a1a1d}
 .cert .cl{height:6px;border-radius:3px;background:rgba(26,26,29,.15);margin-top:8px}
 .cert .seal{position:absolute;right:8%;bottom:10%;width:22%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--red-hi),var(--red-deep));display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-weight:900;font-size:clamp(.7rem,1.2vw,.9rem);box-shadow:0 6px 16px rgba(183,4,18,.4)}
@@ -727,6 +744,9 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></symbol>
   <symbol id="i-sil" viewBox="0 0 24 24"><circle cx="12" cy="7" r="5" fill="currentColor" stroke="none"/><path d="M2 24c0-6 4.5-10 10-10s10 4 10 10Z" fill="currentColor" stroke="none"/></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.13c-.24.68-1.42 1.3-1.95 1.35-.5.05-.97.23-3.28-.68-2.78-1.1-4.540-3.950-4.68-4.13-.13-.18-1.11-1.48-1.11-2.83 0-1.35.71-2.01.96-2.28.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.61.47.24.56.79 1.93.86 2.07.07.14.11.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.14-.28.29-.12.56.16.27.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.86-1.07.18-.27.36-.23.61-.14.25.09 1.59.75 1.86.89.27.14.45.2.52.32.07.11.07.66-.17 1.33Z"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></symbol>
+  <symbol id="i-syringe" viewBox="0 0 24 24"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></symbol>
+  <symbol id="i-news" viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></symbol>
 </svg>
 
 <!-- ===== Intro ===== -->
@@ -736,15 +756,15 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     <path class="head" d="M43.2 11.6 33.7 16.9 36 3.5Z" fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
     <path class="tri" d="M27 22.5v19L43 32Z" fill="currentColor" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round"/>
   </svg>
-  <div class="wm"><span>atualiza</span><b>talks</b></div>
+  <div class="wm"><span>atualiza</span><b>talks <em>me</em></b></div>
 </div>
 
 <!-- ===== Header ===== -->
 <header class="hdr" id="hdr">
   <div class="wrap">
-    <a href="#inicio" class="brand" aria-label="Atualiza Talks — início">
+    <a href="#inicio" class="brand" aria-label="Atualiza Talks ME — início">
       <svg class="mk"><use href="#glyph"/></svg>
-      <span class="wm"><span>atualiza</span><b>talks</b></span>
+      <span class="wm"><span>atualiza</span><b>talks <em>me</em></b></span>
     </a>
     <nav class="nav" aria-label="Seções">
       <a href="#inicio" data-sec="inicio">Início</a>
@@ -773,8 +793,8 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     <div class="slide-body"><div class="wrap"><div class="slide-copy">
       <div class="tag-orig anim"><svg><use href="#app"/></svg>Curso online · Emergency Talks</div>
       <h1 class="tt anim d1">Atualiza Talks <span>2027</span></h1>
-      <div class="meta anim d2"><span class="hot">Para médicos com título de especialista em Medicina de Emergência</span></div>
-      <p class="desc anim d3">Curso de atualização continuada de janeiro a dezembro de 2027. Toda segunda-feira, um artigo comentado com áudio e flashcards. Uma vez por mês, um encontro ao vivo, online, aos sábados, das 9h às 12h.</p>
+      <div class="meta anim d2"><span class="hot">Para médicos com ou sem título que querem se atualizar em Medicina de Emergência</span></div>
+      <p class="desc anim d3">Curso de atualização continuada de janeiro a dezembro de 2027, com artigos, pesquisas, procedimentos e notícias da especialidade. Toda segunda-feira, um artigo comentado com áudio e flashcards. Uma vez por mês, um encontro ao vivo, online, aos sábados, das 9h às 12h.</p>
       <div class="ctas anim d4">
         <a href="#inscricao" class="btn btn-red">Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
         <a href="#como-funciona" class="btn btn-ghost"><svg class="i"><use href="#i-info"/></svg>Como funciona</a>
@@ -830,7 +850,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     </div></div></div>
   </article>
 
-  <div class="flag"><svg class="i"><use href="#i-steth"/></svg>Para emergencistas titulados</div>
+  <div class="flag"><svg class="i"><use href="#i-steth"/></svg>Com ou sem título de especialista</div>
 
   <div class="rail" role="tablist" aria-label="Escolher destaque">
     <div class="wrap">
@@ -846,21 +866,29 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
 <section class="who" id="para-quem">
   <div class="wrap">
     <h2 class="rv">Para quem é este curso?</h2>
-    <p class="lead rv">O Atualiza Talks é para médicos que já têm título de especialista em Medicina de Emergência. Selecione a opção que descreve você:</p>
+    <p class="lead rv">O Atualiza Talks é para todo médico que quer se manter atualizado em Medicina de Emergência, <strong>com ou sem título de especialista</strong>: quem dá plantão, quem está na residência e quem já é especialista.</p>
+    <p class="topics-k rv">O que você acompanha no curso</p>
+    <ul class="topics rv">
+      <li class="topic"><svg class="i"><use href="#i-file"/></svg>Artigos</li>
+      <li class="topic"><svg class="i"><use href="#i-flask"/></svg>Pesquisas</li>
+      <li class="topic"><svg class="i"><use href="#i-syringe"/></svg>Procedimentos</li>
+      <li class="topic"><svg class="i"><use href="#i-news"/></svg>Notícias da especialidade</li>
+    </ul>
+    <p class="who-sel rv">Selecione a opção que descreve você:</p>
     <div class="profiles rv">
       <button class="profile" data-p="1" aria-controls="pp1">
         <span class="avatar av1"><svg class="i"><use href="#i-steth"/></svg><span class="badge"><svg class="i"><use href="#i-check"/></svg></span></span>
         <span class="pname">Já tenho título de especialista</span>
       </button>
       <button class="profile" data-p="2" aria-controls="pp2">
-        <span class="avatar av2"><svg class="i"><use href="#i-book"/></svg><span class="badge"><svg class="i"><use href="#i-clock"/></svg></span></span>
-        <span class="pname">Ainda vou fazer a prova de título</span>
+        <span class="avatar av2"><svg class="i"><use href="#i-book"/></svg><span class="badge"><svg class="i"><use href="#i-check"/></svg></span></span>
+        <span class="pname">Ainda não tenho título</span>
       </button>
     </div>
     <p class="who-hint" id="whoHint">Clique em uma das opções</p>
     <div class="who-panel" id="pp1">
-      <h3>Este curso foi feito para você.</h3>
-      <p>Depois do título, o desafio é se manter atualizado. O Atualiza Talks organiza essa rotina para você: artigos relevantes comentados toda semana e um encontro ao vivo por mês para discutir evidências e a prática na emergência, com profundidade técnica e linguagem clara.</p>
+      <h3>Este curso é para você.</h3>
+      <p>Depois do título, o desafio é acompanhar o que muda na especialidade. O Atualiza Talks organiza essa rotina para você, com artigos, pesquisas, procedimentos e notícias da Medicina de Emergência: conteúdo novo toda semana e um encontro ao vivo por mês, com profundidade técnica e linguagem clara.</p>
       <ul class="checks">
         <li><svg class="i"><use href="#i-check"/></svg>12 meses de atualização, de janeiro a dezembro de 2027</li>
         <li><svg class="i"><use href="#i-check"/></svg>Conteúdo novo toda segunda-feira</li>
@@ -869,10 +897,21 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
       <a href="#incluido" class="btn btn-red btn-sm">Ver o que está incluído<svg class="i"><use href="#i-arrow"/></svg></a>
     </div>
     <div class="who-panel" id="pp2">
-      <h3>Para você, o curso certo é outro.</h3>
-      <p>O Atualiza Talks <strong>não é um preparatório</strong> para a prova de título nem para o RQE: ele é para quem já é titulado. Se você vai prestar a prova, conheça o <strong>TEME 2027</strong>, o preparatório da Emergency Talks. Depois de conquistar o título, o Atualiza Talks continua com você.</p>
-      <div class="ctas" style="margin-top:20px">
-        <a href="https://gtalksmkt.github.io/preparatorio-teme-2027/" target="_blank" rel="noopener" class="btn btn-red btn-sm">Conhecer o TEME 2027<svg class="i"><use href="#i-arrow"/></svg></a>
+      <h3>Este curso também é para você.</h3>
+      <p>Você não precisa de título de especialista para fazer o Atualiza Talks. Se você atua na emergência, no plantão ou na residência, o curso mantém você em dia com artigos, pesquisas, procedimentos e notícias da especialidade, com conteúdo novo toda semana e um encontro ao vivo por mês.</p>
+      <ul class="checks">
+        <li><svg class="i"><use href="#i-check"/></svg>12 meses de atualização, de janeiro a dezembro de 2027</li>
+        <li><svg class="i"><use href="#i-check"/></svg>Conteúdo novo toda segunda-feira</li>
+        <li><svg class="i"><use href="#i-check"/></svg>Um encontro ao vivo por mês, com gravação no portal</li>
+      </ul>
+      <a href="#incluido" class="btn btn-red btn-sm">Ver o que está incluído<svg class="i"><use href="#i-arrow"/></svg></a>
+      <div class="bubble">
+        <span class="ic"><svg class="i"><use href="#i-award"/></svg></span>
+        <div>
+          <strong>Vai prestar a prova de título?</strong>
+          <p>Conheça também o Preparatório TEME 2027, da Emergency Talks. Você pode fazer os dois: o TEME para a prova e o Atualiza Talks para se manter atualizado.</p>
+          <a href="https://gtalksmkt.github.io/preparatorio-teme-2027/" target="_blank" rel="noopener" class="btn btn-white btn-sm">Conhecer o Preparatório TEME<svg class="i"><use href="#i-arrow"/></svg></a>
+        </div>
       </div>
     </div>
   </div>
@@ -1111,7 +1150,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
           <div>
             <div class="mock mock-cert">
               <div class="cert">
-                <div class="ch"><svg class="mk"><use href="#glyph"/></svg><span class="wm"><span>atualiza</span><b>talks</b></span></div>
+                <div class="ch"><svg class="mk"><use href="#glyph"/></svg><span class="wm"><span>atualiza</span><b>talks <em>me</em></b></span></div>
                 <h5>CERTIFICADO</h5>
                 <div class="cl" style="width:70%;margin-top:12px"></div>
                 <div class="cl" style="width:52%"></div>
@@ -1231,7 +1270,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
       <h2 class="title">Inscrições para o Atualiza Talks 2027</h2>
       <p class="lead">Valores, formas de pagamento e condições de inscrição serão divulgados em breve. Fale com a nossa equipe pelo WhatsApp para ser avisado(a) assim que as inscrições abrirem.</p>
       <ul class="checks" style="margin-top:24px">
-        <li><svg class="i"><use href="#i-check"/></svg>Para médicos com título de especialista em Medicina de Emergência</li>
+        <li><svg class="i"><use href="#i-check"/></svg>Para médicos com ou sem título de especialista em Medicina de Emergência</li>
         <li><svg class="i"><use href="#i-check"/></svg>Conteúdo semanal e 12 encontros ao vivo</li>
         <li><svg class="i"><use href="#i-check"/></svg>Gravações, testes mensais e certificado conforme as regras do curso</li>
       </ul>
@@ -1272,7 +1311,8 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
         <div><h3>Certificação</h3><p>O Atualiza Talks prevê a emissão de certificado, com controle de presença e notas. A natureza do certificado, a carga horária e os critérios mínimos serão divulgados oficialmente na abertura das inscrições.</p></div>
       </div>
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">O que é o Atualiza Talks 2027?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>É um curso online de atualização continuada em Medicina de Emergência da Emergency Talks, com duração de 12 meses (janeiro a dezembro de 2027). Ele combina conteúdo semanal no portal (artigo comentado, áudio e flashcards) com um encontro ao vivo por mês.</p></div></div>
-      <div class="faq-i rv"><button class="faq-q" aria-expanded="false">É um preparatório para a prova de título?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>Não. O Atualiza Talks é para médicos que já possuem título de especialista em Medicina de Emergência e querem seguir atualizados. Se você vai prestar a prova, conheça o <a href="https://gtalksmkt.github.io/preparatorio-teme-2027/" target="_blank" rel="noopener">TEME 2027</a>, o preparatório da Emergency Talks.</p></div></div>
+      <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Preciso ter título de especialista para fazer o curso?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>Não. O Atualiza Talks é para todo médico que quer se manter atualizado em Medicina de Emergência, com ou sem título: quem dá plantão, quem está na residência e quem já é especialista.</p></div></div>
+      <div class="faq-i rv"><button class="faq-q" aria-expanded="false">É um preparatório para a prova de título?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>Não. O Atualiza Talks é um curso de atualização em artigos, pesquisas, procedimentos e notícias da especialidade. Se você vai prestar a prova, conheça também o <a href="https://gtalksmkt.github.io/preparatorio-teme-2027/" target="_blank" rel="noopener">Preparatório TEME 2027</a>, da Emergency Talks. Você pode fazer os dois.</p></div></div>
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">O curso é online?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>Sim. Os artigos, áudios, flashcards, testes e gravações ficam no portal do curso, e os encontros mensais são transmitidos online, ao vivo.</p></div></div>
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Como funcionam os encontros ao vivo?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>Um sábado por mês, das 9h às 12h (horário de Brasília), online. Cada encontro é dedicado ao tema do mês e reúne aula de revisão, Journal Club e mesa-redonda. O primeiro encontro está previsto para 16 de janeiro de 2027.</p></div></div>
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">E se eu não puder assistir ao vivo?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>Os encontros são gravados e disponibilizados depois no portal, para você assistir quando puder.</p></div></div>
@@ -1303,8 +1343,8 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
   <div class="wrap">
     <div class="ft">
       <div>
-        <a href="#inicio" class="brand"><svg class="mk"><use href="#glyph"/></svg><span class="wm"><span>atualiza</span><b>talks</b></span></a>
-        <p>Curso online de atualização continuada em Medicina de Emergência para médicos com título de especialista.</p>
+        <a href="#inicio" class="brand"><svg class="mk"><use href="#glyph"/></svg><span class="wm"><span>atualiza</span><b>talks <em>me</em></b></span></a>
+        <p>Curso online de atualização continuada em Medicina de Emergência para médicos com ou sem título de especialista.</p>
         <div class="ft-by"><span>Um curso</span><img src="emergency-logo.png" alt="Emergency Talks" /></div>
       </div>
       <div>
@@ -1325,7 +1365,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
         </ul>
       </div>
     </div>
-    <div class="ft-bottom"><span>© 2026 Emergency Talks · Grupo Talks. Todos os direitos reservados.</span><span>O Atualiza Talks é para médicos já titulados e não é um curso preparatório para a prova de título.</span></div>
+    <div class="ft-bottom"><span>© 2026 Emergency Talks · Grupo Talks. Todos os direitos reservados.</span><span>O Atualiza Talks é um curso de atualização, aberto a médicos com ou sem título, e não é um preparatório para a prova de título.</span></div>
   </div>
 </footer>
 
