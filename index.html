@@ -841,8 +841,8 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     <div class="slide-body"><div class="wrap"><div class="slide-copy">
       <div class="tag-orig anim"><svg><use href="#app"/></svg>Início do curso</div>
       <h2 class="st anim d1">Primeiro encontro: <span>16 de janeiro de 2027.</span></h2>
-      <div class="meta anim d2"><span class="hot">Faltam <span data-days>—</span> dias</span><span class="pill">TEMA: SEPSE E CHOQUE SÉPTICO</span></div>
-      <p class="desc anim d3">O curso começa em janeiro com o tema sepse e choque séptico e segue até dezembro, com um tema diferente a cada mês.</p>
+      <div class="meta anim d2"><span class="hot">Faltam <span data-days>—</span> dias</span><span class="pill">TEMA: AVC</span></div>
+      <p class="desc anim d3">O curso começa em janeiro com o tema AVC e segue até dezembro, com um tema diferente a cada mês.</p>
       <div class="ctas anim d4">
         <a href="#inscricao" class="btn btn-red">Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
         <a href="#temas" class="btn btn-ghost"><svg class="i"><use href="#i-grid"/></svg>Ver os 12 temas</a>
@@ -993,7 +993,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
             <div class="mock">
               <div class="ma-bar"><i></i><i></i><i></i><em>portal · Atualiza Talks ME</em></div>
               <div class="ma-body">
-                <div class="chips"><span class="chip red">ARTIGO DA SEMANA</span><span class="chip">SEGUNDA-FEIRA</span><span class="chip">SEPSE</span></div>
+                <div class="chips"><span class="chip red">ARTIGO DA SEMANA</span><span class="chip">SEGUNDA-FEIRA</span><span class="chip">AVC</span></div>
                 <div class="sk h"></div><div class="sk h w70"></div>
                 <div class="ma-src"><span style="width:22%"></span><span style="width:12%"></span><span style="width:18%"></span></div>
                 <div class="sk"></div><div class="sk w80"></div><div class="sk hl"></div><div class="sk w60"></div><div class="sk"></div><div class="sk w45"></div>
@@ -1125,7 +1125,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
           </div>
           <div>
             <div class="mock mock-quiz" id="quiz">
-              <div class="mq-head"><span>Teste de janeiro</span><span>Questão <b>1</b> de 20</span></div>
+              <div class="mq-head"><span>Teste de setembro</span><span>Questão <b>1</b> de 20</span></div>
               <div class="mq-prog"><i></i></div>
               <p class="mq-q">No choque séptico, qual é o vasopressor de primeira escolha?</p>
               <button class="mq-opt"><b>A</b>Dopamina</button>
@@ -1215,7 +1215,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
       </div>
       <div class="cd rv">
         <span class="k">O curso começa em</span>
-        <h3>Primeiro encontro: sepse e choque séptico</h3>
+        <h3>Primeiro encontro: AVC</h3>
         <div class="cd-boxes" id="cd">
           <div><b data-cd="d">--</b><small>dias</small></div>
           <div><b data-cd="h">--</b><small>horas</small></div>
@@ -1439,18 +1439,18 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
 
   /* ===== Os 12 temas de 2027 (briefing) ===== */
   const EPS=[
-    {d:'2027-01-16',t:'Sepse e choque séptico',img:'1516574187841-cb9cc2ca948b',tags:'Sepse, choque séptico, ressuscitação'},
-    {d:'2027-02-20',t:'Via aérea na emergência',img:'1725870475677-7dc91efe9f93',tags:'Via aérea, intubação, oxigenação'},
+    {d:'2027-01-16',t:'AVC',img:'1711409645921-ef3db0501f96',tags:'AVC isquêmico, AVC hemorrágico, trombólise'},
+    {d:'2027-02-20',t:'Via aérea',img:'1725870475677-7dc91efe9f93',tags:'Via aérea, intubação, oxigenação'},
     {d:'2027-03-13',t:'Síndromes coronarianas agudas',img:'1682706841281-f723c5bfcd83',tags:'Dor torácica, ECG, SCA'},
-    {d:'2027-04-17',t:'PCR e arritmias',img:'1755549746563-a7c0a391af36',tags:'Parada cardiorrespiratória, arritmias'},
-    {d:'2027-05-15',t:'AVC e emergências neurológicas',img:'1711409645921-ef3db0501f96',tags:'AVC, emergências neurológicas'},
-    {d:'2027-06-12',t:'Insuficiência respiratória e ventilação',img:'1616012480717-fd9867059ca0',tags:'Insuficiência respiratória, ventilação'},
-    {d:'2027-07-17',t:'Trauma na sala vermelha',img:'1554734867-bf3c00a49371',tags:'Trauma, sala vermelha'},
-    {d:'2027-08-14',t:'Distúrbios hidroeletrolíticos e ácido-base',img:'1606206591513-adbfbdd7a177',tags:'Eletrólitos, gasometria, ácido-base'},
-    {d:'2027-09-18',t:'Emergências endócrinas',img:'1763142842671-573188baaabd',tags:'Emergências endócrinas'},
-    {d:'2027-10-23',t:'Intoxicações exógenas',img:'1628771065518-0d82f1938462',tags:'Toxicologia, intoxicações'},
-    {d:'2027-11-13',t:'Analgesia, sedação e procedimentos',img:'1666446224369-2783384adf02',tags:'Analgesia, sedação, procedimentos'},
-    {d:'2027-12-11',t:'Retrospectiva: o que mudou em 2027',img:'1587825140708-dfaf72ae4b04',tags:'Revisão das principais evidências do ano'}
+    {d:'2027-04-17',t:'Reanimação',img:'1755549746563-a7c0a391af36',tags:'Parada cardiorrespiratória, RCP, cuidados pós-parada'},
+    {d:'2027-05-15',t:'Trauma',img:'1554734867-bf3c00a49371',tags:'Trauma, atendimento inicial, sala vermelha'},
+    {d:'2027-06-12',t:'Insuficiência respiratória',img:'1616012480717-fd9867059ca0',tags:'Insuficiência respiratória, ventilação'},
+    {d:'2027-07-17',t:'Emergências clínicas',img:'1763142842671-573188baaabd',tags:'Emergências clínicas'},
+    {d:'2027-08-14',t:'Toxicologia',img:'1628771065518-0d82f1938462',tags:'Toxicologia, intoxicações'},
+    {d:'2027-09-18',t:'Sepse',img:'1516574187841-cb9cc2ca948b',tags:'Sepse, choque séptico, ressuscitação'},
+    {d:'2027-10-23',t:'Analgesia, sedação e procedimentos',img:'1666446224369-2783384adf02',tags:'Analgesia, sedação, procedimentos'},
+    {d:'2027-11-13',t:'Emergências onco-hematológicas',img:'1606206591513-adbfbdd7a177',tags:'Emergências oncológicas, emergências hematológicas'},
+    {d:'2027-12-11',t:'Melhores do ano',img:'1587825140708-dfaf72ae4b04',tags:'Revisão das principais evidências do ano'}
   ].map((e,i)=>{const [y,m,d]=e.d.split('-').map(Number);return {...e,n:i+1,day:d,mi:m-1}});
 
   /* agenda: Google Agenda (link) e arquivo .ics */
@@ -1611,7 +1611,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
   /* flashcards (exemplos) */
   const FC=[
     {tag:'Sepse',q:'Choque séptico: qual é a meta inicial de pressão arterial média ao iniciar vasopressor?',a:'PAM ≥ 65 mmHg'},
-    {tag:'Distúrbios eletrolíticos',q:'Hipercalemia com alterações no ECG: qual a primeira medida para estabilizar a membrana do miocárdio?',a:'Cálcio intravenoso (gluconato ou cloreto de cálcio)'},
+    {tag:'Emergências clínicas',q:'Hipercalemia com alterações no ECG: qual a primeira medida para estabilizar a membrana do miocárdio?',a:'Cálcio intravenoso (gluconato ou cloreto de cálcio)'},
     {tag:'AVC',q:'AVC isquêmico: até quanto tempo após o último momento visto bem a trombólise IV é classicamente indicada?',a:'Até 4,5 horas'}
   ];
   let fi=0;const fc=$('#fc');
