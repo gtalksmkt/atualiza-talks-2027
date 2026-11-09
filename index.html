@@ -121,12 +121,12 @@ section{position:relative}
 .slide-bg{position:absolute;inset:0;overflow:hidden}
 .slide-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 11s linear;filter:saturate(.8) contrast(1.06)}
 .slide.on .slide-bg img{transform:scale(1)}
+.slide-bg picture{display:contents}
 .slide-bg::after{content:"";position:absolute;inset:0;background:
   linear-gradient(90deg,rgba(5,3,10,.96) 0%,rgba(5,3,10,.8) 30%,rgba(5,3,10,.3) 60%,rgba(5,3,10,0) 80%),
   linear-gradient(0deg,var(--bg) 0%,rgba(5,3,10,.7) 16%,rgba(5,3,10,0) 44%),
   linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 20%)}
 .slide-bg.tint::before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(60% 70% at 75% 40%,rgba(211,28,43,.26),transparent 70%);mix-blend-mode:screen}
-.img-ecg{filter:hue-rotate(228deg) saturate(1.4) brightness(.95)!important}
 .slide-body{position:absolute;left:0;right:0;bottom:clamp(150px,23vh,240px);z-index:2}
 .slide-copy{max-width:760px}
 .anim{opacity:0}
@@ -806,7 +806,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
 
   <article class="slide on" aria-label="1 de 4">
     <div class="slide-bg tint">
-      <img src="https://images.unsplash.com/photo-1549560826-4b7bfe23f37b?auto=format&fit=crop&w=1920&q=70" srcset="https://images.unsplash.com/photo-1549560826-4b7bfe23f37b?auto=format&fit=crop&w=900&h=1300&q=70 900w, https://images.unsplash.com/photo-1549560826-4b7bfe23f37b?auto=format&fit=crop&w=1920&q=70 1920w, https://images.unsplash.com/photo-1549560826-4b7bfe23f37b?auto=format&fit=crop&w=2600&q=70 2600w" sizes="100vw" alt="" fetchpriority="high" style="object-position:62% 50%" />
+      <picture><source media="(max-width:820px)" srcset="img/hero-o-curso-m.jpg" /><img src="img/hero-o-curso.jpg" alt="" fetchpriority="high" /></picture>
     </div>
     <div class="slide-body"><div class="wrap"><div class="slide-copy">
       <div class="tag-orig anim"><svg><use href="#app"/></svg>Curso online · Emergency Talks</div>
@@ -822,7 +822,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
 
   <article class="slide" aria-label="2 de 4">
     <div class="slide-bg">
-      <img class="img-ecg" src="https://images.unsplash.com/photo-1682706841289-9d7ddf5eb999?auto=format&fit=crop&w=1920&q=70" srcset="https://images.unsplash.com/photo-1682706841289-9d7ddf5eb999?auto=format&fit=crop&w=900&h=1300&q=70 900w, https://images.unsplash.com/photo-1682706841289-9d7ddf5eb999?auto=format&fit=crop&w=1920&q=70 1920w" sizes="100vw" alt="" loading="lazy" />
+      <picture><source media="(max-width:820px)" srcset="img/hero-toda-segunda-m.jpg" /><img src="img/hero-toda-segunda.jpg" alt="" loading="lazy" /></picture>
     </div>
     <div class="slide-body"><div class="wrap"><div class="slide-copy">
       <div class="tag-orig anim"><svg><use href="#app"/></svg>Toda segunda-feira</div>
@@ -838,7 +838,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
 
   <article class="slide" aria-label="3 de 4">
     <div class="slide-bg tint">
-      <img src="https://images.unsplash.com/photo-1734094546615-045bf5f7ea0e?auto=format&fit=crop&w=1920&q=70" srcset="https://images.unsplash.com/photo-1734094546615-045bf5f7ea0e?auto=format&fit=crop&w=900&h=1300&q=70 900w, https://images.unsplash.com/photo-1734094546615-045bf5f7ea0e?auto=format&fit=crop&w=1920&q=70 1920w" sizes="100vw" alt="" loading="lazy" />
+      <img src="img/hero-ao-vivo.jpg" alt="" loading="lazy" />
     </div>
     <div class="slide-body"><div class="wrap"><div class="slide-copy">
       <div class="tag-orig anim"><span class="live"><span class="dot-live"></span>Ao vivo</span>· uma vez por mês</div>
@@ -854,7 +854,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
 
   <article class="slide" aria-label="4 de 4">
     <div class="slide-bg tint">
-      <img src="https://images.unsplash.com/photo-1512102438733-bfa4ed29aef7?auto=format&fit=crop&w=1920&q=70" srcset="https://images.unsplash.com/photo-1512102438733-bfa4ed29aef7?auto=format&fit=crop&w=900&h=1300&q=70 900w, https://images.unsplash.com/photo-1512102438733-bfa4ed29aef7?auto=format&fit=crop&w=1920&q=70 1920w" sizes="100vw" alt="" loading="lazy" style="filter:saturate(.55) brightness(.8) contrast(1.1)" />
+      <picture><source media="(max-width:820px)" srcset="img/hero-inicio-m.jpg" /><img src="img/hero-inicio.jpg" alt="" loading="lazy" /></picture>
     </div>
     <div class="slide-body"><div class="wrap"><div class="slide-copy">
       <div class="tag-orig anim"><svg><use href="#app"/></svg>Início do curso</div>
@@ -1467,18 +1467,21 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
   /* ===== Os 12 temas de 2027 (briefing) ===== */
   const EPS=[
     {d:'2027-01-16',t:'AVC',img:'1711409645921-ef3db0501f96',tags:'AVC isquêmico, AVC hemorrágico, trombólise'},
-    {d:'2027-02-20',t:'Via aérea',img:'1725870475677-7dc91efe9f93',tags:'Via aérea, intubação, oxigenação'},
-    {d:'2027-03-13',t:'Síndromes coronarianas agudas',img:'1682706841281-f723c5bfcd83',tags:'Dor torácica, ECG, SCA'},
-    {d:'2027-04-17',t:'Reanimação',img:'1755549746563-a7c0a391af36',tags:'Parada cardiorrespiratória, RCP, cuidados pós-parada'},
-    {d:'2027-05-15',t:'Trauma',img:'1554734867-bf3c00a49371',tags:'Trauma, atendimento inicial, sala vermelha'},
-    {d:'2027-06-12',t:'Insuficiência respiratória',img:'1616012480717-fd9867059ca0',tags:'Insuficiência respiratória, ventilação'},
-    {d:'2027-07-17',t:'Emergências clínicas',img:'1763142842671-573188baaabd',tags:'Emergências clínicas'},
+    {d:'2027-02-20',t:'Via aérea',foto:'via-aerea',tags:'Via aérea, intubação, oxigenação'},
+    {d:'2027-03-13',t:'Síndromes coronarianas agudas',foto:'sca',tags:'Dor torácica, ECG, SCA'},
+    {d:'2027-04-17',t:'Reanimação',foto:'reanimacao',card:'reanimacao.avif',tags:'Parada cardiorrespiratória, RCP, cuidados pós-parada'},
+    {d:'2027-05-15',t:'Trauma',foto:'trauma',tags:'Trauma, atendimento inicial, sala vermelha'},
+    {d:'2027-06-12',t:'Insuficiência respiratória',foto:'insuficiencia-respiratoria',tags:'Insuficiência respiratória, ventilação'},
+    {d:'2027-07-17',t:'Emergências clínicas',foto:'emergencias-clinicas',tags:'Emergências clínicas'},
     {d:'2027-08-14',t:'Toxicologia',img:'1628771065518-0d82f1938462',tags:'Toxicologia, intoxicações'},
-    {d:'2027-09-18',t:'Sepse',img:'1516574187841-cb9cc2ca948b',tags:'Sepse, choque séptico, ressuscitação'},
+    {d:'2027-09-18',t:'Sepse',foto:'sepse',tags:'Sepse, choque séptico, ressuscitação'},
     {d:'2027-10-23',t:'Analgesia, sedação e procedimentos',img:'1666446224369-2783384adf02',tags:'Analgesia, sedação, procedimentos'},
-    {d:'2027-11-13',t:'Emergências onco-hematológicas',img:'1606206591513-adbfbdd7a177',tags:'Emergências oncológicas, emergências hematológicas'},
+    {d:'2027-11-13',t:'Emergências onco-hematológicas',foto:'onco-hemato',tags:'Emergências oncológicas, emergências hematológicas'},
     {d:'2027-12-11',t:'Melhores do ano',img:'1587825140708-dfaf72ae4b04',tags:'Revisão das principais evidências do ano'}
   ].map((e,i)=>{const [y,m,d]=e.d.split('-').map(Number);return {...e,n:i+1,day:d,mi:m-1}});
+  /* fotos dos temas: arquivos próprios em img/temas (cartão retrato + foto grande do detalhe) ou Unsplash */
+  const CARD=e=>e.foto?`img/temas/${e.card||e.foto+'-card.jpg'}`:IMG(e.img,420,630);
+  const BIG=e=>e.foto?`img/temas/${e.foto}.jpg`:IMG(e.img,1200,640);
 
   /* agenda: Google Agenda (link) e arquivo .ics */
   const EV_TXT=e=>`Atualiza Talks ME 2027 · Encontro ao vivo: ${e.t}`;
@@ -1501,7 +1504,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     <button class="ep" data-i="${i}" aria-label="Tema ${e.n}: ${e.t}. Encontro ao vivo em ${e.day} de ${MES[e.mi]}">
       <span class="ep-num" aria-hidden="true">${e.n}</span>
       <span class="ep-card">
-        <img src="${IMG(e.img,420,630)}" alt="" loading="lazy" />
+        <img src="${CARD(e)}" alt="" loading="lazy" />
         <span class="ep-flag"><svg><use href="#app"/></svg>Ao vivo</span>
         <span class="ep-date">${pad(e.day)} ${AB[e.mi]}</span>
         <span class="ep-info"><small>${MESC[e.mi]}</small><strong>${e.t}</strong><span class="ep-more"><svg class="i"><use href="#i-info"/></svg>Ver detalhes</span></span>
@@ -1526,13 +1529,13 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
   $('#icsAll').addEventListener('click',()=>downloadIcs(EPS,'atualiza-talks-2027-encontros.ics'));
 
   /* mosaico final */
-  $('#collage').innerHTML=[...EPS,...EPS].map(e=>`<img src="${IMG(e.img,240,360)}" alt="" loading="lazy" />`).join('');
+  $('#collage').innerHTML=[...EPS,...EPS].map(e=>`<img src="${CARD(e)}" alt="" loading="lazy" />`).join('');
 
   /* detalhes do tema */
   const modal=$('#modal');let cur=0,lastFocus=null;
   function fillEp(i){
     const e=EPS[i];cur=i;
-    $('#mImg').src=IMG(e.img,1200,640);
+    $('#mImg').src=BIG(e);
     $('#mKick').textContent=`Tema ${pad(e.n)} · ${MESC[e.mi]} de 2027`;
     $('#mTitle').textContent=e.t;
     $('#mHot').textContent=`Encontro ao vivo: ${pad(e.day)}/${pad(e.mi+1)}`;
