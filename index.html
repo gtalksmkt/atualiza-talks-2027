@@ -204,8 +204,8 @@ section{position:relative}
 .price-box ul{display:grid;gap:9px;margin:20px 0 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);text-align:left}
 .price-box li{display:flex;gap:10px;align-items:flex-start;font-size:.93rem;color:#eceef2}
 .price-box li .i{width:18px;height:18px;color:#ff8a94;margin-top:3px;stroke-width:2.6}
-.price-box .after,.promo .after{margin-top:10px;font-size:.95rem;color:rgba(255,255,255,.82)}
-.price-box .after b,.promo .after b{color:#fff;white-space:nowrap}
+.price-box .after{margin-top:10px;font-size:.95rem;color:rgba(255,255,255,.82)}
+.price-box .after b{color:#fff;white-space:nowrap}
 
 /* ===== Pop-up da condição especial ===== */
 .promo{position:fixed;inset:0;z-index:130;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
@@ -1443,7 +1443,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
   </div>
 </div>
 
-<!-- pop-up da condição especial (abre após 20 s) -->
+<!-- pop-up da condição especial (abre após 10 s; o valor depois do 1º mês fica só no site, para o pop-up não poluir) -->
 <div class="promo" id="promo" role="dialog" aria-modal="true" aria-labelledby="promoTitle" hidden>
   <div class="promo-box" tabindex="-1">
     <svg class="ring-bg"><use href="#glyph"/></svg>
@@ -1451,7 +1451,6 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     <span class="offer-badge"><svg class="i"><use href="#i-award"/></svg>Condição especial</span>
     <h3 id="promoTitle">Atualiza Talks ME por <span>R$&nbsp;9,90</span> no primeiro mês</h3>
     <p>Comece sua atualização em Medicina de Emergência pagando só R$&nbsp;9,90 no primeiro mês: artigos comentados, áudios, flashcards e encontro ao vivo.</p>
-    <p class="after">Depois, <b>R$&nbsp;299,90/mês</b> · residentes: <b>R$&nbsp;199,90/mês</b></p>
     <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Quero%20garantir%20o%20Atualiza%20Talks%20ME%202027%20por%20R%24%209%2C90%20no%20primeiro%20m%C3%AAs." target="_blank" rel="noopener" class="btn btn-white" id="promoCta"><svg class="i"><use href="#i-wa"/></svg>Quero garantir por R$&nbsp;9,90</a>
     <a href="#oferta" class="promo-more" id="promoMore">Ver os detalhes da condição</a>
   </div>
@@ -1593,7 +1592,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
   hero.addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)go(si+(dx<0?1:-1));tx=null},{passive:true});
   new IntersectionObserver(([en])=>hero.classList.toggle('paused',!en.isIntersecting),{threshold:.15}).observe(hero);
 
-  /* pop-up da condição especial: abre após 20 s, uma vez por sessão (espera o modal de tema fechar) */
+  /* pop-up da condição especial: abre após 10 s, uma vez por sessão (espera o modal de tema fechar) */
   const promo=$('#promo');let promoFocus=null;
   function closePromo(){if(promo.hidden)return;promo.hidden=true;document.body.style.overflow='';if(promoFocus)promoFocus.focus({preventScroll:true})}
   function openPromo(){
@@ -1601,7 +1600,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     try{if(sessionStorage.getItem('atzPromo'))return;sessionStorage.setItem('atzPromo','1')}catch(e){}
     promoFocus=document.activeElement;promo.hidden=false;document.body.style.overflow='hidden';$('.promo-box').focus({preventScroll:true});
   }
-  setTimeout(openPromo,20000);
+  setTimeout(openPromo,10000);
   ['#promoClose','#promoCta','#promoMore'].forEach(s=>$(s).addEventListener('click',closePromo));
   promo.addEventListener('click',e=>{if(e.target===promo)closePromo()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closePromo()});
