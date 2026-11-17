@@ -234,7 +234,11 @@ section{position:relative}
 .choose-opt strong{font-family:var(--font-display);font-weight:800;font-size:1.25rem;letter-spacing:-.01em}
 .choose-opt .p1{font-weight:700;color:var(--red-text)}
 .choose-opt small{color:var(--muted);font-size:.86rem}
-.choose-opt .go{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg,var(--red),var(--red-deep));font-weight:700;font-size:.92rem}
+.choose-opt small{margin-bottom:8px}
+.choose-opt .obs{display:flex;gap:6px;align-items:flex-start;margin:4px 0 8px;font-size:.78rem;line-height:1.35;color:var(--dim);text-align:left;max-width:240px}
+.choose-opt .obs .i{width:15px;height:15px;margin-top:1px;color:var(--red-text)}
+.plan-cta .obs{margin-top:10px;color:var(--muted)}
+.choose-opt .go{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg,var(--red),var(--red-deep));font-weight:700;font-size:.92rem}
 .choose-opt .go .i{width:1.1em;height:1.1em}
 .choose-note{margin-top:16px;font-size:.84rem;color:var(--dim)}
 .choose-note a{color:#d4d6dc;text-decoration:underline;text-underline-offset:3px}
@@ -1333,6 +1337,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
         <p class="plan-q">Para concluir a inscrição, escolha:</p>
         <a href="https://emergencytalks.com.br/?add-to-cart=28058" class="btn btn-red"><svg class="i"><use href="#i-steth"/></svg>Sou médico(a)<svg class="i"><use href="#i-arrow"/></svg></a>
         <a href="https://emergencytalks.com.br/?add-to-cart=28157" class="btn btn-red"><svg class="i"><use href="#i-book"/></svg>Sou residente<svg class="i"><use href="#i-arrow"/></svg></a>
+        <p class="obs">Valor de residente mediante comprovação de que você está na residência médica.</p>
         <p>Você conclui a compra no site da Emergency Talks. Dúvidas? <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Atualiza%20Talks%20ME%202027." target="_blank" rel="noopener">WhatsApp (85) 99830-2705</a></p>
       </div>
     </div>
@@ -1361,7 +1366,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Como é o teste mensal?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>São 20 questões com gabarito sobre os artigos do mês, liberadas depois da publicação do último artigo de cada mês.</p></div></div>
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Vou receber certificado?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>O curso prevê a emissão de certificado, com controle de presença e notas. Os critérios e a carga horária serão divulgados na abertura das inscrições.</p></div></div>
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Por quanto tempo terei acesso aos conteúdos?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>As condições de acesso ao portal, aos conteúdos e às gravações serão informadas junto com a abertura das inscrições.</p></div></div>
-      <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Quanto custa o curso?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>No primeiro mês, R$&nbsp;9,90 (condição especial de lançamento). Depois, R$&nbsp;299,90 por mês, ou R$&nbsp;199,90 por mês para residentes.</p></div></div>
+      <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Quanto custa o curso?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>No primeiro mês, R$&nbsp;9,90 (condição especial de lançamento). Depois, R$&nbsp;299,90 por mês, ou R$&nbsp;199,90 por mês para residentes (é preciso comprovar que você está na residência médica).</p></div></div>
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Como faço para me inscrever?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>Clique em <a href="#inscricao" data-comprar>Quero me inscrever</a>, escolha se você é médico(a) ou residente e conclua a compra no site da Emergency Talks, com a condição de lançamento de R$&nbsp;9,90 no primeiro mês. Se tiver dúvidas, <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Atualiza%20Talks%20ME%202027." target="_blank" rel="noopener">fale com a nossa equipe pelo WhatsApp</a>.</p></div></div>
     </div>
   </div>
@@ -1500,6 +1505,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
         <strong>Sou residente</strong>
         <span class="p1">R$&nbsp;9,90 no 1º mês</span>
         <small>Depois, R$&nbsp;199,90/mês</small>
+        <span class="obs"><svg class="i"><use href="#i-info"/></svg>Valor exclusivo para residentes: será preciso comprovar que você está na residência médica.</span>
         <span class="go">Continuar<svg class="i"><use href="#i-arrow"/></svg></span>
       </a>
     </div>
