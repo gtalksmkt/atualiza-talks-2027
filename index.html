@@ -221,6 +221,25 @@ section{position:relative}
 .promo .btn{width:100%;margin-top:22px;white-space:normal}
 .promo-more{display:inline-block;margin-top:14px;font-weight:600;font-size:.92rem;color:#fff;text-decoration:underline;text-underline-offset:3px}
 
+/* ===== Escolha da inscrição: médico ou residente (cada um vai para o seu produto no site) ===== */
+.choose-box{position:relative;width:min(640px,100%);max-height:calc(100svh - 32px);overflow-y:auto;border-radius:20px;padding:clamp(28px,5vw,40px) clamp(18px,4vw,34px) clamp(22px,4vw,30px);text-align:center;background:linear-gradient(180deg,#1C1A20,#141217);border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 90px rgba(0,0,0,.7);animation:pop .4s var(--ease)}
+.choose-box:focus{outline:none}
+.choose-box .m-close{position:absolute;z-index:3}
+.choose-box .offer-badge{background:rgba(211,28,43,.16);border-color:rgba(232,48,63,.45);color:var(--red-text)}
+.choose-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.choose-opt{display:flex;flex-direction:column;align-items:center;gap:6px;padding:22px 16px 18px;border-radius:16px;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.14);color:#fff;transition:border-color .2s,background .2s,transform .2s}
+.choose-opt:hover,.choose-opt:focus-visible{border-color:var(--red-hi);background:rgba(211,28,43,.12);transform:translateY(-2px)}
+.choose-opt .ic{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--red-hi),var(--red-deep));margin-bottom:6px}
+.choose-opt .ic .i{width:28px;height:28px;color:#fff}
+.choose-opt strong{font-family:var(--font-display);font-weight:800;font-size:1.25rem;letter-spacing:-.01em}
+.choose-opt .p1{font-weight:700;color:var(--red-text)}
+.choose-opt small{color:var(--muted);font-size:.86rem}
+.choose-opt .go{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:9px 18px;border-radius:999px;background:linear-gradient(135deg,var(--red),var(--red-deep));font-weight:700;font-size:.92rem}
+.choose-opt .go .i{width:1.1em;height:1.1em}
+.choose-note{margin-top:16px;font-size:.84rem;color:var(--dim)}
+.choose-note a{color:#d4d6dc;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:520px){.choose-grid{grid-template-columns:1fr;gap:10px;margin-top:18px}.choose-opt{padding:16px 14px 14px}.choose-opt .ic{width:46px;height:46px}}
+
 /* ===== Números ===== */
 .stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stat{background:var(--bg);padding:clamp(22px,3vw,34px) 12px;text-align:center}
@@ -568,6 +587,9 @@ section{position:relative}
 .plan-cta{padding:6px 26px 26px}
 .plan-cta .btn{width:100%;white-space:normal;text-align:center}
 .plan-cta p{margin-top:12px;font-size:.84rem;color:var(--dim);text-align:center}
+.plan-cta .btn+.btn{margin-top:10px}
+.plan-cta .plan-q{margin:0 0 12px;font-size:.92rem;font-weight:600;color:#d4d6dc}
+.plan-cta p a{color:#d4d6dc;text-decoration:underline;text-underline-offset:3px}
 
 /* ===== Certificação + FAQ ===== */
 .certband{display:flex;gap:20px;align-items:flex-start;background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.6vw,26px);margin-bottom:clamp(28px,4vw,40px)}
@@ -796,7 +818,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     </nav>
     <div class="hdr-right">
       <span class="hdr-by"><img src="emergency-logo.png" alt="Emergency Talks" /></span>
-      <a href="#inscricao" class="btn btn-red btn-sm">Inscreva-se</a>
+      <a href="#inscricao" class="btn btn-red btn-sm" data-comprar>Inscreva-se</a>
     </div>
   </div>
 </header>
@@ -815,7 +837,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
       <div class="meta anim d2"><span class="hot">Para médicos com ou sem título que querem se atualizar em Medicina de Emergência</span></div>
       <p class="desc anim d3">Curso de atualização continuada de janeiro a dezembro de 2027, com artigos, pesquisas, procedimentos e notícias da especialidade. Toda segunda-feira, um artigo comentado com áudio e flashcards. Uma vez por mês, um encontro ao vivo, online, aos sábados, das 9h às 12h.</p>
       <div class="ctas anim d4">
-        <a href="#inscricao" class="btn btn-red">Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
+        <a href="#inscricao" class="btn btn-red" data-comprar>Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
         <a href="#como-funciona" class="btn btn-ghost"><svg class="i"><use href="#i-info"/></svg>Como funciona</a>
       </div>
     </div></div></div>
@@ -831,7 +853,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
       <div class="meta anim d2"><span class="pill">52 ARTIGOS NO ANO</span><span class="pill">PORTAL ONLINE</span></div>
       <p class="desc anim d3">Toda segunda-feira você encontra no portal do curso um artigo selecionado, um comentário em áudio sobre ele e flashcards para revisar os pontos principais.</p>
       <div class="ctas anim d4">
-        <a href="#inscricao" class="btn btn-red">Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
+        <a href="#inscricao" class="btn btn-red" data-comprar>Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
         <a href="#incluido" class="btn btn-ghost"><svg class="i"><use href="#i-info"/></svg>O que está incluído</a>
       </div>
     </div></div></div>
@@ -847,7 +869,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
       <div class="meta anim d2"><span class="pill">ONLINE</span><span class="pill">3 HORAS</span><span class="pill">COM GRAVAÇÃO</span></div>
       <p class="desc anim d3">Uma manhã por mês com aula de revisão, Journal Club e mesa-redonda sobre o tema do mês. Se não puder assistir ao vivo, a gravação fica disponível no portal.</p>
       <div class="ctas anim d4">
-        <a href="#inscricao" class="btn btn-red">Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
+        <a href="#inscricao" class="btn btn-red" data-comprar>Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
         <a href="#ao-vivo" class="btn btn-ghost"><svg class="i"><use href="#i-info"/></svg>Sobre os encontros</a>
       </div>
     </div></div></div>
@@ -863,7 +885,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
       <div class="meta anim d2"><span class="hot">Faltam <span data-days>—</span> dias</span><span class="pill">TEMA: AVC</span></div>
       <p class="desc anim d3">O curso começa em janeiro com o tema AVC e segue até dezembro, com um tema diferente a cada mês.</p>
       <div class="ctas anim d4">
-        <a href="#inscricao" class="btn btn-red">Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
+        <a href="#inscricao" class="btn btn-red" data-comprar>Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
         <a href="#temas" class="btn btn-ghost"><svg class="i"><use href="#i-grid"/></svg>Ver os 12 temas</a>
       </div>
     </div></div></div>
@@ -914,7 +936,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
         <h2>Comece o Atualiza Talks pagando R$&nbsp;9,90 no primeiro mês</h2>
         <p>Uma condição especial para você conhecer o curso na prática: no primeiro mês você paga só R$&nbsp;9,90 e já recebe os artigos comentados, os áudios, os flashcards e o encontro ao vivo do mês. Depois, a mensalidade é de R$&nbsp;299,90, ou R$&nbsp;199,90 para residentes.</p>
         <div class="ctas">
-          <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Quero%20garantir%20o%20Atualiza%20Talks%20ME%202027%20por%20R%24%209%2C90%20no%20primeiro%20m%C3%AAs." target="_blank" rel="noopener" class="btn btn-white"><svg class="i"><use href="#i-wa"/></svg>Quero garantir por R$&nbsp;9,90</a>
+          <a href="#inscricao" class="btn btn-white" data-comprar>Quero garantir por R$&nbsp;9,90<svg class="i"><use href="#i-arrow"/></svg></a>
           <a href="#incluido" class="btn btn-ghost"><svg class="i"><use href="#i-info"/></svg>O que está incluído</a>
         </div>
       </div>
@@ -1240,7 +1262,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
           <div><b data-cd="s">--</b><small>segundos</small></div>
         </div>
         <p class="sub">Sábado, 16 de janeiro de 2027, às 9h (horário de Brasília)</p>
-        <div class="ctas"><a class="btn btn-ghost btn-sm" data-gcal="0" target="_blank" rel="noopener"><svg class="i"><use href="#i-calplus"/></svg>Adicionar ao Google Agenda</a><a href="#inscricao" class="btn btn-red btn-sm">Quero me inscrever</a></div>
+        <div class="ctas"><a class="btn btn-ghost btn-sm" data-gcal="0" target="_blank" rel="noopener"><svg class="i"><use href="#i-calplus"/></svg>Adicionar ao Google Agenda</a><a href="#inscricao" class="btn btn-red btn-sm" data-comprar>Quero me inscrever</a></div>
       </div>
     </div>
 
@@ -1283,7 +1305,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     <div class="rv">
       <span class="eyebrow">Inscrição</span>
       <h2 class="title">Inscrições para o Atualiza Talks ME 2027</h2>
-      <p class="lead">Condição especial de lançamento: <strong>R$&nbsp;9,90 no primeiro mês</strong>. Depois, R$&nbsp;299,90/mês, ou R$&nbsp;199,90/mês para residentes. Fale com a nossa equipe pelo WhatsApp para garantir a sua vaga e tirar dúvidas sobre o pagamento.</p>
+      <p class="lead">Condição especial de lançamento: <strong>R$&nbsp;9,90 no primeiro mês</strong>. Depois, R$&nbsp;299,90/mês, ou R$&nbsp;199,90/mês para residentes. Escolha ao lado se você é médico(a) ou residente e conclua a inscrição direto no site da Emergency Talks.</p>
       <ul class="checks" style="margin-top:24px">
         <li><svg class="i"><use href="#i-check"/></svg>Para médicos com ou sem título de especialista em Medicina de Emergência</li>
         <li><svg class="i"><use href="#i-check"/></svg>Conteúdo semanal e 12 encontros ao vivo</li>
@@ -1308,8 +1330,10 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
         <li><span>Residentes, a partir do 2º mês</span><b>R$&nbsp;199,90/mês</b></li>
       </ul>
       <div class="plan-cta">
-        <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Quero%20garantir%20o%20Atualiza%20Talks%20ME%202027%20por%20R%24%209%2C90%20no%20primeiro%20m%C3%AAs." target="_blank" rel="noopener" class="btn btn-red"><svg class="i"><use href="#i-wa"/></svg>Quero garantir por R$&nbsp;9,90</a>
-        <p>Atendimento pelo WhatsApp (85) 99830-2705</p>
+        <p class="plan-q">Para concluir a inscrição, escolha:</p>
+        <a href="https://emergencytalks.com.br/?add-to-cart=28058" class="btn btn-red"><svg class="i"><use href="#i-steth"/></svg>Sou médico(a)<svg class="i"><use href="#i-arrow"/></svg></a>
+        <a href="https://emergencytalks.com.br/?add-to-cart=28157" class="btn btn-red"><svg class="i"><use href="#i-book"/></svg>Sou residente<svg class="i"><use href="#i-arrow"/></svg></a>
+        <p>Você conclui a compra no site da Emergency Talks. Dúvidas? <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Atualiza%20Talks%20ME%202027." target="_blank" rel="noopener">WhatsApp (85) 99830-2705</a></p>
       </div>
     </div>
   </div>
@@ -1338,7 +1362,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Vou receber certificado?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>O curso prevê a emissão de certificado, com controle de presença e notas. Os critérios e a carga horária serão divulgados na abertura das inscrições.</p></div></div>
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Por quanto tempo terei acesso aos conteúdos?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>As condições de acesso ao portal, aos conteúdos e às gravações serão informadas junto com a abertura das inscrições.</p></div></div>
       <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Quanto custa o curso?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>No primeiro mês, R$&nbsp;9,90 (condição especial de lançamento). Depois, R$&nbsp;299,90 por mês, ou R$&nbsp;199,90 por mês para residentes.</p></div></div>
-      <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Como faço para me inscrever?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p><a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Quero%20garantir%20o%20Atualiza%20Talks%20ME%202027%20por%20R%24%209%2C90%20no%20primeiro%20m%C3%AAs." target="_blank" rel="noopener">Fale com a nossa equipe pelo WhatsApp</a> e garanta a condição especial de lançamento: R$&nbsp;9,90 no primeiro mês.</p></div></div>
+      <div class="faq-i rv"><button class="faq-q" aria-expanded="false">Como faço para me inscrever?<svg class="i"><use href="#i-plus"/></svg></button><div class="faq-a"><p>Clique em <a href="#inscricao" data-comprar>Quero me inscrever</a>, escolha se você é médico(a) ou residente e conclua a compra no site da Emergency Talks, com a condição de lançamento de R$&nbsp;9,90 no primeiro mês. Se tiver dúvidas, <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Atualiza%20Talks%20ME%202027." target="_blank" rel="noopener">fale com a nossa equipe pelo WhatsApp</a>.</p></div></div>
     </div>
   </div>
 </section>
@@ -1350,7 +1374,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     <h2 class="rv">Mantenha-se atualizado em 2027 com a <span>Emergency Talks</span></h2>
     <p class="rv">O Atualiza Talks ME começa em 16 de janeiro de 2027. Garanta agora a condição especial de lançamento: R$&nbsp;9,90 no primeiro mês.</p>
     <div class="ctas rv">
-      <a href="#inscricao" class="btn btn-red">Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
+      <a href="#inscricao" class="btn btn-red" data-comprar>Quero me inscrever<svg class="i"><use href="#i-arrow"/></svg></a>
       <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Atualiza%20Talks%20ME%202027." target="_blank" rel="noopener" class="btn btn-ghost"><svg class="i"><use href="#i-chat"/></svg>Falar com a equipe</a>
     </div>
   </div>
@@ -1407,7 +1431,7 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
         <div class="tag-orig"><svg><use href="#app"/></svg><span id="mKick"></span></div>
         <h3 id="mTitle"></h3>
         <div class="ctas">
-          <a href="#inscricao" class="btn btn-red btn-sm" data-close>Quero me inscrever</a>
+          <a href="#inscricao" class="btn btn-red btn-sm" data-comprar>Quero me inscrever</a>
           <a class="btn btn-ghost btn-sm" id="mGcal" target="_blank" rel="noopener"><svg class="i"><use href="#i-calplus"/></svg>Adicionar ao Google Agenda</a>
         </div>
       </div>
@@ -1451,8 +1475,35 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
     <span class="offer-badge"><svg class="i"><use href="#i-award"/></svg>Condição especial</span>
     <h3 id="promoTitle">Atualiza Talks ME por <span>R$&nbsp;9,90</span> no primeiro mês</h3>
     <p>Comece sua atualização em Medicina de Emergência pagando só R$&nbsp;9,90 no primeiro mês: artigos comentados, áudios, flashcards e encontro ao vivo.</p>
-    <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Quero%20garantir%20o%20Atualiza%20Talks%20ME%202027%20por%20R%24%209%2C90%20no%20primeiro%20m%C3%AAs." target="_blank" rel="noopener" class="btn btn-white" id="promoCta"><svg class="i"><use href="#i-wa"/></svg>Quero garantir por R$&nbsp;9,90</a>
+    <a href="#inscricao" class="btn btn-white" id="promoCta" data-comprar>Quero garantir por R$&nbsp;9,90<svg class="i"><use href="#i-arrow"/></svg></a>
     <a href="#oferta" class="promo-more" id="promoMore">Ver os detalhes da condição</a>
+  </div>
+</div>
+
+<!-- escolha da inscrição: cada opção leva ao seu produto no site (médico 28058 · residente 28157) -->
+<div class="promo" id="comprar" role="dialog" aria-modal="true" aria-labelledby="comprarTitle" hidden>
+  <div class="choose-box" tabindex="-1">
+    <button class="m-close" id="comprarClose" aria-label="Fechar"><svg class="i"><use href="#i-x"/></svg></button>
+    <span class="offer-badge"><svg class="i"><use href="#i-edit"/></svg>Inscrição</span>
+    <h3 id="comprarTitle">Você é médico(a) ou residente?</h3>
+    <p>Escolha a sua opção para concluir a inscrição no site da Emergency Talks.</p>
+    <div class="choose-grid">
+      <a class="choose-opt" href="https://emergencytalks.com.br/?add-to-cart=28058">
+        <span class="ic"><svg class="i"><use href="#i-steth"/></svg></span>
+        <strong>Sou médico(a)</strong>
+        <span class="p1">R$&nbsp;9,90 no 1º mês</span>
+        <small>Depois, R$&nbsp;299,90/mês</small>
+        <span class="go">Continuar<svg class="i"><use href="#i-arrow"/></svg></span>
+      </a>
+      <a class="choose-opt" href="https://emergencytalks.com.br/?add-to-cart=28157">
+        <span class="ic"><svg class="i"><use href="#i-book"/></svg></span>
+        <strong>Sou residente</strong>
+        <span class="p1">R$&nbsp;9,90 no 1º mês</span>
+        <small>Depois, R$&nbsp;199,90/mês</small>
+        <span class="go">Continuar<svg class="i"><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+    <p class="choose-note">Ficou com dúvida? <a href="https://wa.me/5585998302705?text=Ol%C3%A1!%20Tenho%20uma%20d%C3%BAvida%20sobre%20o%20Atualiza%20Talks%20ME%202027." target="_blank" rel="noopener">Fale com a nossa equipe pelo WhatsApp</a></p>
   </div>
 </div>
 
@@ -1604,6 +1655,18 @@ footer{padding:56px 0 44px;border-top:1px solid var(--line);color:var(--dim);fon
   ['#promoClose','#promoCta','#promoMore'].forEach(s=>$(s).addEventListener('click',closePromo));
   promo.addEventListener('click',e=>{if(e.target===promo)closePromo()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closePromo()});
+
+  /* escolha da inscrição: todo botão de compra (data-comprar) abre "médico ou residente?" */
+  const comprar=$('#comprar');let comprarFocus=null;
+  function openComprar(){
+    closePromo();if(modal.classList.contains('open'))closeEp();
+    comprarFocus=document.activeElement;comprar.hidden=false;document.body.style.overflow='hidden';$('.choose-box').focus({preventScroll:true});
+  }
+  function closeComprar(){if(comprar.hidden)return;comprar.hidden=true;document.body.style.overflow='';if(comprarFocus)comprarFocus.focus({preventScroll:true})}
+  $$('[data-comprar]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();openComprar()}));
+  $('#comprarClose').addEventListener('click',closeComprar);
+  comprar.addEventListener('click',e=>{if(e.target===comprar)closeComprar()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeComprar()});
 
   /* contadores */
   const cIO=new IntersectionObserver(es=>es.forEach(en=>{
